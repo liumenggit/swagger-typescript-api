@@ -336,6 +336,7 @@ export class CodeGenProcess {
 
     if (!lodash.isEmpty(configuration.extraTemplates)) {
       for (const extraTemplate of configuration.extraTemplates) {
+        configuration.metadata = extraTemplate.metadata
         const content = this.templatesWorker.renderTemplate(
           this.fileSystem.getFileContent(extraTemplate.path),
           configuration,
